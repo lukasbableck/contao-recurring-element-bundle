@@ -1,0 +1,11 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+        public: false
+    Lukasbableck\ContaoRecurringElementBundle\:
+        resource: ../src
+        exclude: ../src/{Resources}
+    Lukasbableck\ContaoRecurringElementBundle\EventListener\:
+        resource: ../src/EventListener
+        public: true
