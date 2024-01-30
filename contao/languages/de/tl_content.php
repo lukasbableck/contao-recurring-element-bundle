@@ -11,13 +11,9 @@ $GLOBALS["TL_LANG"]["tl_content"]["recurringInterval"]["yearly"] = "Jährlich";
 
 $GLOBALS["TL_LANG"]["tl_content"]["recurringIntervalCount"] = ["Intervallanzahl", "Geben Sie die Anzahl des Intervalls an."];
 
-$GLOBALS["TL_LANG"]["tl_content"]["recurringStartDate"] = ["Startdatum", "Geben Sie das Startdatum an."];
+$GLOBALS["TL_LANG"]["tl_content"]["recurringStart"] = ["Startdatum", "Geben Sie das Startdatum an."];
 
-$GLOBALS["TL_LANG"]["tl_content"]["recurringEndDate"] = ["Enddatum", "Geben Sie das Enddatum an."];
-
-$GLOBALS["TL_LANG"]["tl_content"]["recurringStartTime"] = ["Startzeit", "Geben Sie die Startzeit an."];
-
-$GLOBALS["TL_LANG"]["tl_content"]["recurringEndTime"] = ["Endzeit", "Geben Sie die Endzeit an."];
+$GLOBALS["TL_LANG"]["tl_content"]["recurringEnd"] = ["Enddatum", "Geben Sie das Enddatum an."];
 
 $GLOBALS["TL_LANG"]["tl_content"]["recurringWeekdays"] = ["Wochentage", "Wählen Sie die Wochentage aus, an denen das Element wiederkehrend angezeigt werden soll."];
 $GLOBALS["TL_LANG"]["tl_content"]["recurringWeekdays"]["monday"] = "Montag";
@@ -29,3 +25,5 @@ $GLOBALS["TL_LANG"]["tl_content"]["recurringWeekdays"]["saturday"] = "Samstag";
 $GLOBALS["TL_LANG"]["tl_content"]["recurringWeekdays"]["sunday"] = "Sonntag";
 
 $GLOBALS["TL_LANG"]["tl_content"]["recurringMonthdays"] = ["Monatstage", "Wählen Sie die Monatstage aus, an denen das Element wiederkehrend angezeigt werden soll."];
+
+$GLOBALS["TL_LANG"]["tl_content"]["recurringMonths"] = ["Monate", "Wählen Sie die Monate aus, in denen das Element wiederkehrend angezeigt werden soll."];
