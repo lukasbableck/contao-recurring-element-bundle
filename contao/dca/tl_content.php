@@ -33,7 +33,7 @@ $GLOBALS["TL_DCA"]["tl_content"]["fields"]["recurringIntervalDuration"] = [
 $GLOBALS["TL_DCA"]["tl_content"]["fields"]["recurringStart"] = [
 	"exclude" => true,
 	"inputType" => "text",
-	"eval" => ['rgxp'=>'datim', 'datepicker'=>true, 'tl_class'=>'w50 wizard'],
+	"eval" => ['rgxp'=>'datim', 'datepicker'=>true, 'tl_class'=>'w50 wizard clr'],
 	"sql" => "varchar(10) NOT NULL default ''",
 ];
 
