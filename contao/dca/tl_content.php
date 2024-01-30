@@ -4,7 +4,7 @@ $GLOBALS["TL_DCA"]["tl_content"]["fields"]["recurring"] = [
 	"exclude" => true,
 	"inputType" => "checkbox",
 	"eval" => ["tl_class" => "w50", "submitOnChange" => true],
-	'sql' => ['type' => 'boolean', 'default' => false]
+	"sql" => "char(1) NOT NULL default ''",
 ];
 
 $GLOBALS["TL_DCA"]["tl_content"]["fields"]["recurringInterval"] = [
