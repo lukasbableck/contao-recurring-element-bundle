@@ -1,6 +1,7 @@
 {
     "name": "lukasbableck/contao-recurring-element-bundle",
     "type": "contao-bundle",
+	"description": "This bundle adds the option to hide and show any element based on the current date.",
     "require": {
         "contao/core-bundle": "^4.13"
     },
