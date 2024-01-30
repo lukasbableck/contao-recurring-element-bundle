@@ -1,4 +1,5 @@
 <?php
+use Contao\CoreBundle\DataContainer\PaletteManipulator;
 
 $GLOBALS["TL_DCA"]["tl_content"]["fields"]["recurring"] = [
 	"exclude" => true,
