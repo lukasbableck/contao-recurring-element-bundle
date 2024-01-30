@@ -11,6 +11,8 @@ $GLOBALS["TL_LANG"]["tl_content"]["recurringInterval"]["yearly"] = "Yearly";
 
 $GLOBALS["TL_LANG"]["tl_content"]["recurringIntervalCount"] = ["Interval count", "Enter the number of the interval."];
 
+$GLOBALS["TL_LANG"]["tl_content"]["recurringIntervalDuration"] = ["Interval duration", "Enter the duration of the interval in days."];
+
 $GLOBALS["TL_LANG"]["tl_content"]["recurringStart"] = ["Start date", "Enter the start date."];
 
 $GLOBALS["TL_LANG"]["tl_content"]["recurringEnd"] = ["End date", "Enter the end date."];

@@ -20,7 +20,14 @@ $GLOBALS["TL_DCA"]["tl_content"]["fields"]["recurringIntervalCount"] = [
 	"exclude" => true,
 	"inputType" => "text",
 	"eval" => ["tl_class" => "w50", "rgxp" => "digit"],
-	"sql" => "int(10) unsigned NOT NULL default ''",
+	"sql" => "int(10) unsigned NULL",
+];
+
+$GLOBALS["TL_DCA"]["tl_content"]["fields"]["recurringIntervalDuration"] = [
+	"exclude" => true,
+	"inputType" => "text",
+	"eval" => ["tl_class" => "w50", "rgxp" => "digit"],
+	"sql" => "int(10) unsigned NULL",
 ];
 
 $GLOBALS["TL_DCA"]["tl_content"]["fields"]["recurringStart"] = [
@@ -42,7 +49,7 @@ $GLOBALS["TL_DCA"]["tl_content"]["fields"]["recurringWeekdays"] = [
 	"inputType" => "checkbox",
 	"options" => ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"],
 	"reference" => &$GLOBALS["TL_LANG"]["tl_content"]["recurringWeekdays"],
-	"eval" => ["tl_class" => "clr", "multiple" => true],
+	"eval" => ["tl_class" => "w50 clr", "multiple" => true],
 	"sql" => "blob NULL",
 ];
 
@@ -50,7 +57,7 @@ $GLOBALS["TL_DCA"]["tl_content"]["fields"]["recurringMonthdays"] = [
 	"exclude" => true,
 	"inputType" => "checkbox",
 	"options" => range(1, 31),
-	"eval" => ["tl_class" => "clr", "multiple" => true],
+	"eval" => ["tl_class" => "w50", "multiple" => true],
 	"sql" => "blob NULL",
 ];
 
@@ -58,7 +65,7 @@ $GLOBALS["TL_DCA"]["tl_content"]["fields"]["recurringMonths"] = [
 	"exclude" => true,
 	"inputType" => "checkbox",
 	"options" => range(1, 12),
-	"eval" => ["tl_class" => "clr", "multiple" => true],
+	"eval" => ["tl_class" => "w50", "multiple" => true],
 	"sql" => "blob NULL",
 ];
 
@@ -72,4 +79,4 @@ foreach($GLOBALS["TL_DCA"]["tl_content"]["palettes"] as $key => $value){
 }
 
 $GLOBALS["TL_DCA"]["tl_content"]["palettes"]["__selector__"][] = "recurring";
-$GLOBALS["TL_DCA"]["tl_content"]["subpalettes"]["recurring"] = "recurringInterval,recurringIntervalCount,recurringStart,recurringEnd,recurringWeekdays,recurringMonthdays,recurringMonths";
+$GLOBALS["TL_DCA"]["tl_content"]["subpalettes"]["recurring"] = "recurringInterval,recurringIntervalCount,recurringIntervalDuration,recurringStart,recurringEnd,recurringWeekdays,recurringMonthdays,recurringMonths";

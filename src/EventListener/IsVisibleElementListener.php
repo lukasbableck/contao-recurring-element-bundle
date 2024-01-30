@@ -46,13 +46,13 @@ class IsVisibleElementListener{
 
 		if($element->recurringStart){
 			$start = new \DateTime($element->recurringStart);
-			if($now < $startDate){
+			if($now < $start){
 				return false;
 			}
 		}
 		if($element->recurringEnd){
 			$end = new \DateTime($element->recurringEnd);
-			if($now > $endDate){
+			if($now > $end){
 				return false;
 			}
 		}
@@ -97,8 +97,15 @@ class IsVisibleElementListener{
 			}
 			$daterange = new \DatePeriod($start, $interval, $end);
 			foreach($daterange as $date){
-				if($date == $now){
-					return true;
+				$duration = 1;
+				if($element->recurringIntervalDuration) {
+					$duration = $element->recurringIntervalDuration;
+				}
+				$range = new \DatePeriod($date, $duration, 1);
+				foreach($range as $day){
+					if($day == $now){
+						return true;
+					}
 				}
 			}
 		}
