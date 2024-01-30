@@ -15,5 +15,14 @@
             "name": "Lukas Bableck",
             "email": "lukas.bableck@netprofit.de"
         }
-    ]
+    ],
+    "conflict": {
+        "contao/manager-plugin": "<2.0 || >=3.0"
+    },
+    "require-dev": {
+        "contao/manager-plugin": "^2.0"
+    },
+    "extra": {
+        "contao-manager-plugin": "Lukasbableck\\ContaoRecurringElementBundle\\ContaoManager\\Plugin"
+    }
 }
