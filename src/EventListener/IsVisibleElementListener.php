@@ -64,37 +64,22 @@ class IsVisibleElementListener{
 		}
 		
 		if($element->recurringInterval){
+			if($element->recurringIntervalCount){
+				$intervalCount = $element->recurringIntervalCount;
+			}else{
+				$intervalCount = 1;
+			}
 			switch($element->recurringInterval){
 				case 'daily':
-					if($element->recurringIntervalCount){
-						$intervalCount = $element->recurringIntervalCount;
-					}else{
-						$intervalCount = 1;
-					}
 					$interval = new \DateInterval('P' . $intervalCount . 'D');
 					break;
 				case 'weekly':
-					if($element->recurringIntervalCount){
-						$intervalCount = $element->recurringIntervalCount;
-					}else{
-						$intervalCount = 1;
-					}
 					$interval = new \DateInterval('P' . $intervalCount . 'W');
 					break;
 				case 'monthly':
-					if($element->recurringIntervalCount){
-						$intervalCount = $element->recurringIntervalCount;
-					}else{
-						$intervalCount = 1;
-					}
 					$interval = new \DateInterval('P' . $intervalCount . 'M');
 					break;
 				case 'yearly':
-					if($element->recurringIntervalCount){
-						$intervalCount = $element->recurringIntervalCount;
-					}else{
-						$intervalCount = 1;
-					}
 					$interval = new \DateInterval('P' . $intervalCount . 'Y');
 					break;
 			}
