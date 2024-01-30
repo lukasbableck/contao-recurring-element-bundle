@@ -4,11 +4,14 @@ namespace Lukasbableck\ContaoRecurringElementBundle\EventListener;
 use Contao\ContentModel;
 use Contao\CoreBundle\DependencyInjection\Attribute\AsHook;
 use Contao\Model;
+use Contao\System;
 
 #[AsHook('isVisibleElement')]
 class IsVisibleElementListener{
 
     public function __invoke(Model $element, bool $isVisible): bool{
+		if(System::getContainer()->get('request_stack')->getCurrentRequest()->get('_route') == "contao_backend") return $isVisible;
+		
         if ($element instanceof ContentModel) {
 			if($element->recurring){
 				return $this->isElementActive($element);
