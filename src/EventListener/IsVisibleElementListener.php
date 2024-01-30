@@ -4,6 +4,7 @@ namespace Lukasbableck\ContaoRecurringElementBundle\EventListener;
 use Contao\ContentModel;
 use Contao\CoreBundle\DependencyInjection\Attribute\AsHook;
 use Contao\Model;
+use Contao\StringUtil;
 use Contao\System;
 
 #[AsHook('isVisibleElement')]
@@ -29,19 +30,19 @@ class IsVisibleElementListener{
 		$month = $now->format('n');
 
 		if($element->recurringWeekdays){
-			$weekdays = deserialize($element->recurringWeekdays);
+			$weekdays = StringUtil::deserialize($element->recurringWeekdays);
 			if(!in_array($weekday, $weekdays)){
 				return false;
 			}
 		}
 		if($element->recurringMonthdays){
-			$monthdays = deserialize($element->recurringMonthdays);
+			$monthdays = StringUtil::deserialize($element->recurringMonthdays);
 			if(!in_array($monthday, $monthdays)){
 				return false;
 			}
 		}
 		if($element->recurringMonths){
-			$months = deserialize($element->recurringMonths);
+			$months = StringUtil::deserialize($element->recurringMonths);
 			if(!in_array($month, $months)){
 				return false;
 			}
