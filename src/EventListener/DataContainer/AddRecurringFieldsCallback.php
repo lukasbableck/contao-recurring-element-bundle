@@ -20,12 +20,11 @@ class AddRecurringFieldsCallback{
             return;
         }
 
-		echo "test";
 		foreach($GLOBALS["TL_DCA"]["tl_content"]["palettes"] as $key => $value){
 			if($key == "__selector__"){
 				continue;
 			}
-			$GLOBALS["TL_DCA"]["tl_content"]["palettes"][$key] = str_replace("{expert_legend:hide}", "{recurring_legend},recurring;{expert_legend:hide}", $value);
+			$GLOBALS["TL_DCA"]["tl_content"]["palettes"][$key] = str_replace("{expert_legend", "{recurring_legend},recurring;{expert_legend", $value);
 		}
 
     }
