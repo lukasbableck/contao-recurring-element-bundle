@@ -4,7 +4,7 @@ $GLOBALS["TL_DCA"]["tl_content"]["fields"]["recurring"] = [
 	"exclude" => true,
 	"inputType" => "checkbox",
 	"eval" => ["tl_class" => "w50", "submitOnChange" => true],
-	"sql" => "char(1) NOT NULL default ''",
+	'sql' => ['type' => 'boolean', 'default' => false]
 ];
 
 $GLOBALS["TL_DCA"]["tl_content"]["fields"]["recurringInterval"] = [
@@ -71,5 +71,5 @@ foreach($GLOBALS["TL_DCA"]["tl_content"]["palettes"] as $key => $value){
 	$GLOBALS["TL_DCA"]["tl_content"]["palettes"][$key] = str_replace("{expert_legend:hide}", $palette . "{expert_legend:hide}", $value);
 }
 
-$GLOBALS["TL_DCA"]["tl_content"]["subpalettes"]["__selector__"][] = "recurring";
+$GLOBALS["TL_DCA"]["tl_content"]["palettes"]["__selector__"][] = "recurring";
 $GLOBALS["TL_DCA"]["tl_content"]["subpalettes"]["recurring"] = "recurringInterval,recurringIntervalCount,recurringStart,recurringEnd,recurringWeekdays,recurringMonthdays,recurringMonths";
