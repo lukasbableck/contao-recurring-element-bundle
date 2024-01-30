@@ -1,5 +1,4 @@
 <?php
-use Contao\CoreBundle\DataContainer\PaletteManipulator;
 
 $GLOBALS["TL_DCA"]["tl_content"]["fields"]["recurring"] = [
 	"exclude" => true,
@@ -63,47 +62,11 @@ $GLOBALS["TL_DCA"]["tl_content"]["fields"]["recurringMonths"] = [
 	"sql" => "blob NULL",
 ];
 
+$palette = "{recurring_legend},recurring,recurringInterval,recurringIntervalCount,recurringStart,recurringEnd,recurringWeekdays,recurringMonthdays,recurringMonths;";
 
-PaletteManipulator::create()
-	->addLegend('recurring_legend', 'expert_legend', PaletteManipulator::POSITION_BEFORE)
-	->addField('recurring', 'recurring_legend', PaletteManipulator::POSITION_APPEND)
-	->addField('recurringInterval', 'recurring_legend', PaletteManipulator::POSITION_APPEND)
-	->addField('recurringIntervalCount', 'recurring_legend', PaletteManipulator::POSITION_APPEND)
-	->addField('recurringStart', 'recurring_legend', PaletteManipulator::POSITION_APPEND)
-	->addField('recurringEnd', 'recurring_legend', PaletteManipulator::POSITION_APPEND)
-	->addField('recurringWeekdays', 'recurring_legend', PaletteManipulator::POSITION_APPEND)
-	->addField('recurringMonthdays', 'recurring_legend', PaletteManipulator::POSITION_APPEND)
-	->addField('recurringMonths', 'recurring_legend', PaletteManipulator::POSITION_APPEND)
-	->applyToPalette('default', 'tl_content')
-	->applyToPalette('headline', 'tl_content')
-	->applyToPalette('text', 'tl_content')
-	->applyToPalette('html', 'tl_content')
-	->applyToPalette('unfiltered_html', 'tl_content')
-	->applyToPalette('list', 'tl_content')
-	->applyToPalette('description_list', 'tl_content')
-	->applyToPalette('table', 'tl_content')
-	->applyToPalette('accordion', 'tl_content')
-	->applyToPalette('element_group', 'tl_content')
-	->applyToPalette('accordionStart', 'tl_content')
-	->applyToPalette('accordionStop', 'tl_content')
-	->applyToPalette('accordionSingle', 'tl_content')
-	->applyToPalette('swiper', 'tl_content')
-	->applyToPalette('sliderStart', 'tl_content')
-	->applyToPalette('sliderStop', 'tl_content')
-	->applyToPalette('code', 'tl_content')
-	->applyToPalette('markdown', 'tl_content')
-	->applyToPalette('template', 'tl_content')
-	->applyToPalette('hyperlink', 'tl_content')
-	->applyToPalette('toplink', 'tl_content')
-	->applyToPalette('image', 'tl_content')
-	->applyToPalette('gallery', 'tl_content')
-	->applyToPalette('player', 'tl_content')
-	->applyToPalette('youtube', 'tl_content')
-	->applyToPalette('vimeo', 'tl_content')
-	->applyToPalette('download', 'tl_content')
-	->applyToPalette('downloads', 'tl_content')
-	->applyToPalette('alias', 'tl_content')
-	->applyToPalette('article', 'tl_content')
-	->applyToPalette('teaser', 'tl_content')
-	->applyToPalette('form', 'tl_content')
-	->applyToPalette('module', 'tl_content');
+foreach($GLOBALS["TL_DCA"]["tl_content"]["palettes"] as $key => $value){
+	if($key == "__selector__"){
+		continue;
+	}
+	$GLOBALS["TL_DCA"]["tl_content"]["palettes"][$key] = str_replace("{expert_legend:hide}", $palette . "{expert_legend:hide}", $value);
+}
