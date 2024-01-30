@@ -20,7 +20,7 @@ $GLOBALS["TL_DCA"]["tl_content"]["fields"]["recurringIntervalCount"] = [
 	"exclude" => true,
 	"inputType" => "text",
 	"eval" => ["tl_class" => "w50", "rgxp" => "digit"],
-	"sql" => "int(10) unsigned NOT NULL default '0'",
+	"sql" => "int(10) unsigned NOT NULL default ''",
 ];
 
 $GLOBALS["TL_DCA"]["tl_content"]["fields"]["recurringStart"] = [

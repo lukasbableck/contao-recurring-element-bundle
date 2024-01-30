@@ -21,7 +21,7 @@ class IsVisibleElementListener{
 	private function isElementActive(ContentModel $element): bool{
 		
 		$now = new \DateTime();
-		$weekday = str_to_lower($now->format('l'));
+		$weekday = strtolower($now->format('l'));
 		$monthday = $now->format('j');
 		$month = $now->format('n');
 
