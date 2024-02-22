@@ -2,6 +2,7 @@
     "name": "lukasbableck/contao-recurring-element-bundle",
     "type": "contao-bundle",
 	"description": "This bundle adds the option to hide and show any element based on the current date.",
+	"keywords": ["recurring", "element", "wiederkehrend", "elemente", "datum", "date"],
     "require": {
         "contao/core-bundle": "^4.13 || ^5.0"
     },
@@ -14,7 +15,8 @@
     "authors": [
         {
             "name": "Lukas Bableck",
-            "email": "lukas.bableck@netprofit.de"
+            "email": "lukas@bableck.dev",
+            "homepage": "https://bableck.dev"
         }
     ],
     "conflict": {
