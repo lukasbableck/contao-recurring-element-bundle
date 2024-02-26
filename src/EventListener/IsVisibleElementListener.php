@@ -90,7 +90,7 @@ class IsVisibleElementListener{
 			foreach($daterange as $date){
 				$duration = 1;
 				if($element->recurringIntervalDuration) {
-					$duration = $element->recurringIntervalDuration;
+					$duration = $element->recurringIntervalDuration - 1;
 				}
 				$range = new \DatePeriod($date, new \DateInterval('P1D'), $duration);
 				foreach($range as $day){
