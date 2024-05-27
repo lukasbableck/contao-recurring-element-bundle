@@ -1,7 +1,7 @@
 <?php
 namespace Lukasbableck\ContaoRecurringElementBundle\EventListener\DataContainer;
 
-use Contao\ContentModel;
+use Contao\CoreBundle\DataContainer\PaletteManipulator;
 use Contao\CoreBundle\DependencyInjection\Attribute\AsCallback;
 use Contao\DataContainer;
 use Symfony\Component\HttpFoundation\RequestStack;
@@ -24,7 +24,10 @@ class AddRecurringFieldsCallback{
 			if($key == "__selector__"){
 				continue;
 			}
-			$GLOBALS["TL_DCA"]["tl_content"]["palettes"][$key] = str_replace("{expert_legend", "{recurring_legend},recurring;{expert_legend", $value);
+			PaletteManipulator::create()
+				->addLegend('recurring_legend', 'invisible_legend', PaletteManipulator::POSITION_BEFORE)
+				->addField('recurring', 'recurring_legend', PaletteManipulator::POSITION_APPEND)
+				->applyToPalette($key, 'tl_content');
 		}
 
     }
